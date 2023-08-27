@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import {
   AppBar,
@@ -14,6 +15,7 @@ import { Menu } from "@mui/icons-material";
 import { imgurl } from "../assets/Constants";
 import "../assets/Styles/Header.css";
 import Headermenu from "./Headermenu";
+
 const StyledToolbar = styled(Toolbar)`
   background: black;
   min-height: 56px !important;
@@ -38,10 +40,10 @@ const Header = () => {
 
   return (
     <>
-      <AppBar>
+      <AppBar position="static">
         <StyledToolbar className="main">
           <Logo src={imgurl} alt="nothing" />
-          <Box onClick={handleClick} className="display">
+          <Box onClick={handleClick} className="wrapper">
             <Menu />
             <Typography className="typo">Menu</Typography>
           </Box>

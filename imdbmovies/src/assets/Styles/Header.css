@@ -4,12 +4,12 @@
   align-items: center;
 }
 
-.display {
+.wrapper {
   display: flex;
   cursor: pointer;
 }
 
-.display > .typo {
+.wrapper > .typo {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 16px;
   font-weight: 700;

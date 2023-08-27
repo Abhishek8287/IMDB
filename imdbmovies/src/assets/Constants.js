@@ -9,6 +9,6 @@ export const imgurl = `https://upload.wikimedia.org/wikipedia/commons/thumb/6/69
 
 export const top_rated_api_url = "https://api.themoviedb.org/3/movie/top_rated?api_key=352aa8778988c2a2e5d44f0dd6add6cd&language=en-US";
 export const popular_api_url = "https://api.themoviedb.org/3/movie/popular?api_key=352aa8778988c2a2e5d44f0dd6add6cd&language=en-US";
-export const nowplaying_api_url = "https://api.themoviedb.org/3/movie/now_playing?api_key=352aa8778988c2a2e5d44f0dd6add6cd&language=en-US";
+export const NowPLaying_URL = "https://api.themoviedb.org/3/movie/now_playing?api_key=352aa8778988c2a2e5d44f0dd6add6cd&language=en-US";
 
 

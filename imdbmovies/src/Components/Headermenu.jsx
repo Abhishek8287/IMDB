@@ -1,26 +1,23 @@
-import { Menu, MenuItem, Fade } from "@mui/material";
+import React from "react";
+import { Menu, MenuItem } from "@mui/material";
 
-function Headermenu(prop) {
+const Headermenu = (prop) => {
   const { open, handleClose } = prop;
   const openMenu = Boolean(open);
   return (
     <>
       <Menu
-        id="fade-menu"
-        MenuListProps={{
-          "aria-labelledby": "fade-button",
-        }}
+        id="basic-menu"
         anchorEl={open}
         open={openMenu}
         onClose={handleClose}
-        TransitionComponent={Fade}
       >
-        <MenuItem onClick={handleClose}>Top Rated</MenuItem>
-        <MenuItem onClick={handleClose}>Upcoming</MenuItem>
-        <MenuItem onClick={handleClose}>Latest</MenuItem>
+        <MenuItem onClick={handleClose}>Profile</MenuItem>
+        <MenuItem onClick={handleClose}>My account</MenuItem>
+        <MenuItem onClick={handleClose}>Logout</MenuItem>
       </Menu>
     </>
   );
-}
+};
 
 export default Headermenu;
