@@ -35,6 +35,9 @@ function Home() {
           <Upnext movies={movies} />
         </Wrapper>
         <Slides movies={movies} />
+        <Slides movies={movies} />
+        <Slides movies={movies} />
+        <Slides movies={movies} />
       </Component>
     </>
   );

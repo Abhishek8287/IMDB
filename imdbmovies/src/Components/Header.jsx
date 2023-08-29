@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import {
   AppBar,
@@ -10,15 +9,42 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
-
+import { useNavigate } from "react-router-dom";
+import { routePath } from "../assets/Route";
 import { Menu } from "@mui/icons-material";
 import { imgurl } from "../assets/Constants";
-import "../assets/Styles/Header.css";
+
 import Headermenu from "./Headermenu";
 
 const StyledToolbar = styled(Toolbar)`
   background: black;
   min-height: 56px !important;
+  padding: 0 115px !important;
+  justify-content: space-between;
+  & > * {
+    padding: 0 16px;
+  }
+  & > div {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    & > p {
+      font-size: 18px;
+      font-weight: 600px;
+      margin-left: 5px;
+    }
+  }
+  & p {
+    font-size: 14px;
+    font-weight: 600px;
+  }
+`;
+
+const InputsearchField = styled(InputBase)`
+  background: #ffffff;
+  height: 30px;
+  width: 55%;
+  border-radius: 5px;
 `;
 
 const Logo = styled("img")({
@@ -28,7 +54,7 @@ const Logo = styled("img")({
 
 const Header = () => {
   const [open, setOpen] = useState(null);
-
+  const navigate = useNavigate();
   const handleClick = (e) => {
     setOpen(e.currentTarget);
     console.log("Clicked");
@@ -41,25 +67,29 @@ const Header = () => {
   return (
     <>
       <AppBar position="static">
-        <StyledToolbar className="main">
-          <Logo src={imgurl} alt="nothing" />
-          <Box onClick={handleClick} className="wrapper">
+        <StyledToolbar>
+          <Logo
+            src={imgurl}
+            alt="nothing"
+            onClick={() => navigate(routePath.home)}
+          />
+          <Box onClick={handleClick}>
             <Menu />
-            <Typography className="typo">Menu</Typography>
+            <Typography>Menu</Typography>
           </Box>
           <Headermenu open={open} handleClose={handleClose} />
-          <InputBase className="input"></InputBase>
+          <InputsearchField></InputsearchField>
 
-          <Typography className="typo">
-            IMDB<Box component="span">Pro</Box>
+          <Typography>
+            MovieFlex<Box component="span">Pro</Box>
           </Typography>
-          <Box className="display">
+          <Box>
             <BookmarkAddIcon />
-            <Typography className="typo">Watchlist</Typography>
+            <Typography>Watchlist</Typography>
           </Box>
           <Typography>Sign IN</Typography>
 
-          <Box className="display">
+          <Box>
             <Typography>en</Typography>
             <ExpandMoreIcon />
           </Box>
