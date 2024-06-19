@@ -12,8 +12,8 @@ import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
 import { useNavigate } from "react-router-dom";
 import { routePath } from "../assets/Route";
 import { Menu } from "@mui/icons-material";
-import { imgurl } from "../assets/Constants";
-
+// import { imgurl } from "../assets/Constants";
+import { RiMovieFill } from "react-icons/ri";
 import Headermenu from "./Headermenu";
 
 const StyledToolbar = styled(Toolbar)`
@@ -68,11 +68,7 @@ const Header = () => {
     <>
       <AppBar position="static">
         <StyledToolbar>
-          <Logo
-            src={imgurl}
-            alt="nothing"
-            onClick={() => navigate(routePath.home)}
-          />
+          <RiMovieFill onClick={() => navigate(routePath.home)} />
           <Box onClick={handleClick}>
             <Menu />
             <Typography>Menu</Typography>
